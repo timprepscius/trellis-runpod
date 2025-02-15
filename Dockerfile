@@ -35,11 +35,10 @@ RUN wget --no-verbose -O /root/.cache/torch/hub/checkpoints/dinov2_vitl14_reg4_p
 
 #RUN rm -rf /var/lib/apt/lists/*
 
-
 COPY *.py ./
 COPY *.json ./
 
 #RUN python3 rp_warmup.py
 
-#CMD [ "python3", "-u", "rp_handler.py" ]
-CMD [ "/bin/bash" ]
+CMD [ "python3", "-u", "rp_handler.py" ]
+#CMD [ "/bin/bash" ]

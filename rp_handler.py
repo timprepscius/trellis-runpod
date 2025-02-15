@@ -84,7 +84,7 @@ def process(job):
     glb.export(out_file)
 
     with open(out_file, "rb") as f:
-    	out_data = outFile.read()
+       out_data = f.read()
 
     out_b64 = base64.b64encode(out_data).decode("utf-8")
 

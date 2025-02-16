@@ -40,5 +40,9 @@ COPY *.json ./
 
 #RUN python3 rp_warmup.py
 
-CMD [ "python3", "-u", "rp_handler.py" ]
-#CMD [ "/bin/bash" ]
+RUN apt-get install -y zip
+RUN wget --no-verbose -O /root/.cache/torch/hub/fbm.zip "https://github.com/facebookresearch/dinov2/zipball/main"
+RUN cd /root/.cache/torch/hub/ && unzip fbm.zip && mv facebookresearch-dinov2-* facebookresearch_dinov2_main
+
+#CMD [ "python3", "-u", "rp_handler.py" ]
+CMD [ "/bin/bash" ]

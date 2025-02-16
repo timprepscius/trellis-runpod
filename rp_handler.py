@@ -6,7 +6,8 @@ import os
 
 import runpod
 import io
-from runpod.serverless.utils import rp_download, rp_upload, rp_cleanup
+#from runpod.serverless.utils import rp_download, rp_upload, rp_cleanup
+from runpod.serverless.utils import rp_cleanup
 from runpod.serverless.utils.rp_validator import validate
 
 from rp_schema import INPUT_SCHEMA
@@ -21,7 +22,7 @@ os.environ['SPCONV_ALGO'] = 'native'        # Can be 'native' or 'auto', default
 
 from PIL import Image
 from trellis.pipelines import TrellisImageTo3DPipeline
-from trellis.utils import render_utils, postprocessing_utils
+from trellis.utils import postprocessing_utils
 import base64
 
 print(f"SETUP ---- C {datetime.now()}");
